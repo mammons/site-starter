@@ -1,0 +1,11 @@
+.page-section{
+
+  &--gray{
+    background-color: $mainGray;
+    color: $khaki;
+  }
+
+  &--b-padding{
+    padding-bottom: 50px;
+  }
+}

@@ -1,0 +1,54 @@
+.primary-nav{
+  display: flex;
+  justify-content: center;
+
+    ul{
+      padding: 0;
+      width: 100%;
+    }
+
+    li{
+      list-style: none;
+      padding: 20px 0;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #FFF;
+
+      &:last-child{
+        border: none;
+      }
+    }
+
+    a{
+      text-decoration: none;
+      color: #FFF;
+    }
+
+
+  @mixin atMedium{
+
+    &--pull-right{
+      justify-content: flex-end;
+
+      ul{
+        margin: 0;
+        padding: 0;
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      li{
+        width: auto;
+        border: none;
+        padding-right: 50px;
+      }
+
+      a{
+        text-decoration: none;
+        color: #FFF;
+        cursor: pointer;
+      }
+    }
+  }
+}

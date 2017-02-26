@@ -1,0 +1,140 @@
+.site-header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  height: 75px;
+  z-index: 2;
+  transition: height .3s ease-out;
+
+  &--menu-open{
+    height: 150px;
+  }
+
+  @mixin atMedium{
+    height: 100px;
+  }
+
+  &__brand{
+    position: absolute;
+    color: #FFF;
+    padding-left: 50px;
+    font-family: 'Raleway', sans-serif;
+
+    @mixin atMedium{
+      /*padding-left: ;*/
+    }
+
+    &--lead-letter-lg{
+      @mixin atMedium{
+        font-size: 3rem;
+    }
+  }
+
+    &--lagging-letter{
+      display: none;
+
+      @mixin atSmall{
+        display: inline;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__menu-icon{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 10;
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: #FFF;
+      transform-origin: 0 0;
+      transition: transform 0.3s ease-out;
+    }
+
+    &__meat{
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: #FFF;
+      transition: all 0.3s ease-out;
+      transform-origin: 0% 50%;
+    }
+
+    &::after{
+      content:"";
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: #FFF;
+      transform-origin: 0 100%;
+      transition: transform 0.3s ease-out;
+    }
+
+    @mixin atMedium{
+      display: none;
+    }
+  }
+
+  &__menu-icon--close-x{
+    &::before{
+      transform: rotate(45deg) scaleX(1.25);
+    }
+
+    .site-header__menu-icon__meat{
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    &::after{
+      transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+    }
+  }
+
+  &--is-expanded{
+    height: 285px;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  &--collapsed{
+    height: 40px;
+  }
+
+  &__menu-content{
+    opacity: 0;
+    padding-top: 30px;
+    position: relative;
+    z-index: -10;
+    transform: scale(1.2);
+    transition: all .3s ease-out;
+
+    @mixin atMedium{
+      opacity: 1;
+      z-index: 1;
+      padding-top: 25px;
+      transform: scale(1);
+    }
+
+
+    &--is-visible{
+      opacity: 1;
+      z-index: 1;
+      transform: scale(1);
+    }
+  }
+
+
+}
